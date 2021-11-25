@@ -1,0 +1,67 @@
+drop sequence beerseq;
+sequence  beerseq
+create sequence beerseq 
+	increment by 1
+	start with 1
+	minvalue 1
+  maxvalue 999
+ nocache;
+ 
+ 
+drop table beer cascade CONSTRAINTS;
+create table beer(
+num number primary key,
+name varchar2(30) not null,
+nation varchar2(30) not null,
+style varchar2(20) not null,
+stock number  default 0,
+price number  default 0,
+inputdate date default sysdate
+);
+
+select * from beer;
+
+
+insert into beer
+values(beerseq.nextval,'홉스플래쉬','한국','뉴잉글랜드IPA',100,6600,'');
+insert into beer
+values(beerseq.nextval,'트로피컬 스무디','한국','IPA',100,7800,'');
+insert into beer
+values(beerseq.nextval,'고릴라 여우비','한국','SOUR IPA',100,7500,'');
+insert into beer
+values(beerseq.nextval,'구미호 피치에일','한국','밀맥주',100,7500,'');
+
+
+insert into beer
+values(beerseq.nextval,'어메이징 페일에일','한국','페일에일',100,7500,'');
+insert into beer
+values(beerseq.nextval,'맥파이 신개구리','한국','SOUR IPA',100,7500,'');
+insert into beer
+values(beerseq.nextval,'어메이징 헬레스 라거','한국','필스너',100,5500,'');
+insert into beer
+values(beerseq.nextval,'어메이징 첫사랑','한국','Hazy IPA',100,6800,'');
+insert into beer
+values(beerseq.nextval,'핸드앤몰트 모카 스타우트','한국','스타우트',100,7500,'');
+insert into beer
+values(beerseq.nextval,'크래머리 라거','한국','라거',100,7500,'');
+insert into beer
+values(beerseq.nextval,'크래머리 스타우트','한국','스타우트',100,7500,'');
+insert into beer
+values(beerseq.nextval,'크래머리 IPA','한국','IPA',100,7500,'');
+insert into beer
+values(beerseq.nextval,'바이엔 슈테판 라거','독일','라거',100,7500,'');
+insert into beer
+values(beerseq.nextval,'분 오드 괴즈 크릭 분','벨기에','람빅 괴즈',100,7500,'');
+insert into beer
+values(beerseq.nextval,'분 크릭 마리아주 파르페','벨기에','람빅 괴즈',100,7500,'');
+
+insert into beer
+values(beerseq.nextval,'구스아아일랜드 IPA','미국','IPA',100,7500,'');
+insert into beer
+values(beerseq.nextval,'토플링 골리앗 파이어 스컬스','미국','IPA',100,7500,'');
+insert into beer
+values(beerseq.nextval, '콜라','한국','탄산음료',100,7500,'');
+insert into beer
+values(beerseq.nextval,'사이다','한국','탄산음료',100,7500,'');
+insert into beer
+values(beerseq.nextval,'플레이그라운드 코스터','한국','코스터',100,7500);
